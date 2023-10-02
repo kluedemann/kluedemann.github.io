@@ -1,6 +1,6 @@
-AUTHOR = 'Kai Luedemann'
+AUTHOR = 'Danger Doggo'
 SITENAME = 'My Cool Site'
-SITEURL = ''
+SITEURL = 'https://kluedemann.github.io'
 
 PATH = 'content'
 
