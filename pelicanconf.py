@@ -1,6 +1,7 @@
-AUTHOR = 'Danger Doggo'
-SITENAME = 'My Cool Site'
-SITEURL = 'https://kluedemann.github.io'
+AUTHOR = 'Kai Lüdemann'
+SITENAME = 'Kai Lüdemann'
+SITEURL = "/"
+# SITEURL = 'https://kluedemann.github.io'
 
 PATH = 'content'
 
@@ -28,6 +29,22 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
+
+# Make main page static
+INDEX_SAVE_AS = "blog.html"
+
+PAGE_URL = '{slug}.html'
+PAGE_SAVE_AS = '{slug}.html'
+
+TEMPLATE_PAGES = {}
+
+# Configure menu
+DISPLAY_PAGES_ON_MENU = False
+MENUITEMS = (
+    ('Projects', '/projects.html'),
+    ('Publications', '/publications.html'),
+    # ('Blog', '/blog.html'),
+)
 
 THEME = 'templates/mytheme'
