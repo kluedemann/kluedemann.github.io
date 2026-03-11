@@ -1,4 +1,4 @@
-Title: Projects
+Title: Publications
 
 ## QArmy - CMPUT 301 App
 
