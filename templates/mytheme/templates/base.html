@@ -4,3 +4,21 @@
 {{ super() }}
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/style.css" />
 {% endblock %}
+
+{% block body %}
+  <header>
+    {% block header %}{{ super() }}{% endblock header %}
+    {% block nav %}{{ super() }}{% endblock nav %}
+  </header>
+  <div class="page-wrapper">
+    <aside class="profile-sidebar">
+      <img src="{{ SITEURL }}/theme/prof_pic.jpg" alt="{{ AUTHOR }}" />
+    </aside>
+    <main>
+      {% block content %}{% endblock content %}
+    </main>
+  </div>
+  <footer>
+    {% block footer %}{{ super() }}{% endblock footer %}
+  </footer>
+{% endblock body %}
