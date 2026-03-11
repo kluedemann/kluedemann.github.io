@@ -1,19 +1,34 @@
+:root {
+    --color-bg: #1c1c1d;
+    --color-text: #c9d1d9;
+    --color-heading: #e6edf3;
+    --color-muted: #8b949e;
+    --color-line: #30363d;
+    --color-link: #58a6ff;
+    --color-link-hover: #79c0ff;
+    --color-accent: orange;
+    --font-body: 'Segoe UI', 'Trebuchet MS', Tahoma, sans-serif;
+    --content-width: 760px;
+    --layout-width: 1280px;
+    --profile-column-width: 220px;
+    --profile-size: 210px;
+}
+
 /* === Reset & Base === */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
     margin: 0;
     padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #0d1117;
-    color: #c9d1d9;
-    font-family: 'Segoe UI', 'Trebuchet MS', Tahoma, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
     min-height: 100vh;
@@ -23,9 +38,11 @@ body {
 
 /* === Header === */
 header {
-    background-color: #161b22;
-    border-bottom: 1px solid #30363d;
-    padding: 0 2rem;
+    background-color: transparent;
+    border-bottom: 1px solid var(--color-line);
+    width: min(var(--content-width), calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -38,19 +55,19 @@ header hgroup {
 
 header hgroup h1 {
     margin: 0;
-    padding: 0.8rem 0;
-    font-size: 1.5rem;
+    padding: 0.2rem 0;
+    font-size: 2.3rem;
 }
 
 header hgroup h1 a {
-    color: #58a6ff;
+    color: var(--color-text);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.02em;
 }
 
 header hgroup h1 a:hover {
-    color: #79c0ff;
+    color: var(--color-accent);
     text-decoration: none;
 }
 
@@ -66,35 +83,34 @@ nav ul {
 
 nav li {
     display: inline-block;
-    font-style: normal;
     margin-right: 0;
 }
 
 nav a {
     display: block;
-    color: #c9d1d9;
+    color: var(--color-text);
     text-decoration: none;
     padding: 0.4rem 0.75rem;
     border-radius: 4px;
-    font-size: 0.95rem;
-    transition: background-color 0.15s, color 0.15s;
+    font-size: 1.1rem;
+    transition: color 0.15s;
 }
 
 nav a:hover {
-    background-color: #21262d;
-    color: #58a6ff;
+    color: var(--color-accent);
+    text-decoration: none;
 }
 
 /* === Page Layout === */
 .page-wrapper {
-    max-width: 1280px;
+    max-width: var(--layout-width);
     width: 100%;
-    margin: 2.5rem auto;
+    margin: 1.5rem auto;
     padding: 0 2rem;
     display: grid;
-    grid-template-columns: minmax(220px, 1fr) minmax(0, 760px) minmax(120px, 1fr);
+    grid-template-columns: minmax(var(--profile-column-width), 1fr) minmax(0, var(--content-width)) minmax(120px, 1fr);
     align-items: start;
-    column-gap: 2rem;
+    column-gap: 0;
     flex: 1;
 }
 
@@ -102,20 +118,20 @@ nav a:hover {
 .profile-sidebar {
     grid-column: 1;
     justify-self: end;
-    width: 220px;
+    width: var(--profile-column-width);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
+    padding-right: 2rem;
 }
 
 .profile-sidebar img {
-    width: 190px;
-    height: 190px;
+    width: var(--profile-size);
+    height: var(--profile-size);
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #30363d;
-    background-color: #21262d;
+    border: 3px solid var(--color-line);
 }
 
 /* === Main Content === */
@@ -126,10 +142,11 @@ main {
 }
 
 article {
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-    padding: 1.75rem;
+    background-color: transparent;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    padding: 0;
     margin-bottom: 1.5rem;
 }
 
@@ -138,50 +155,92 @@ article > header {
     background: none;
     padding: 0;
     display: block;
+    margin-left: 0;
+    width: 100%;
 }
 
 article > header h2 {
     margin-top: 0;
-    color: #e6edf3;
-    font-size: 1.4rem;
-    border-bottom: 1px solid #30363d;
+    color: var(--color-heading);
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--color-line);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
 
+/* === Rich Entry Lists === */
+.entry-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin: 1.25rem 0;
+}
+
+.entry-card {
+    border-bottom: 1px solid var(--color-line);
+    padding-bottom: 1.25rem;
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+}
+
+.entry-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--color-line);
+    background: #242629;
+}
+
+.entry-card h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+}
+
+.entry-meta {
+    margin: 0.2rem 0;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+.entry-link {
+    margin-top: 0.55rem;
+    display: inline-block;
+}
+
 /* === Links === */
 a {
-    color: #58a6ff;
+    color: var(--color-link);
     text-decoration: none;
 }
 
 a:hover {
-    color: #79c0ff;
+    color: var(--color-link-hover);
     text-decoration: underline;
 }
 
 /* === Headings === */
 h1, h2, h3, h4, h5, h6 {
-    color: #e6edf3;
+    color: var(--color-heading);
 }
 
 /* === Footer === */
 footer {
-    background-color: #161b22;
-    border-top: 1px solid #30363d;
-    padding: 1rem 2rem;
+    border-top: 1px solid var(--color-line);
+    padding: 0.2rem 2rem;
     text-align: center;
-    color: #8b949e;
     font-size: 0.85rem;
     margin-top: auto;
 }
 
 footer a {
-    color: #8b949e;
+    color: var(--color-muted);
 }
 
 footer a:hover {
-    color: #58a6ff;
+    color: var(--color-accent);
     text-decoration: none;
 }
 
@@ -192,7 +251,9 @@ footer a:hover {
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        padding: 0.75rem 1rem;
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+        padding: 0.75rem 0;
         gap: 0.75rem;
     }
 
@@ -209,5 +270,13 @@ footer a:hover {
 
     .profile-sidebar {
         display: none;
+    }
+
+    .entry-card {
+        grid-template-columns: 1fr;
+    }
+
+    .entry-image {
+        max-width: 320px;
     }
 }

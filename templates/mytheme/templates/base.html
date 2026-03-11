@@ -2,6 +2,7 @@
 
 {% block head %}
 {{ super() }}
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥭</text></svg>">
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/style.css" />
 {% endblock %}
 
@@ -11,9 +12,11 @@
     {% block nav %}{{ super() }}{% endblock nav %}
   </header>
   <div class="page-wrapper">
+    {% if page is defined and page.slug == 'about' %}
     <aside class="profile-sidebar">
-      <img src="{{ SITEURL }}/theme/prof_pic.jpg" alt="{{ AUTHOR }}" />
+      <img src="{{ SITEURL }}/theme/prof_pic3.jpg" alt="{{ AUTHOR }}" />
     </aside>
+    {% endif %}
     <main>
       {% block content %}{% endblock content %}
     </main>
