@@ -4,8 +4,8 @@
     --color-heading: #e6edf3;
     --color-muted: #8b949e;
     --color-line: #30363d;
-    --color-link: #58a6ff;
-    --color-link-hover: #79c0ff;
+    --color-link: #8b949e;
+    --color-link-hover: orange;
     --color-accent: orange;
     --font-body: 'Segoe UI', 'Trebuchet MS', Tahoma, sans-serif;
     --content-width: 760px;
@@ -180,18 +180,17 @@ article > header h2 {
     border-bottom: 1px solid var(--color-line);
     padding-bottom: 1.25rem;
     display: grid;
-    grid-template-columns: 140px minmax(0, 1fr);
+    grid-template-columns: 200px minmax(0, 1fr);
     gap: 1rem;
     align-items: start;
 }
 
 .entry-image {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     border: 1px solid var(--color-line);
-    background: #242629;
+    background: white;
 }
 
 .entry-card h3 {
@@ -206,7 +205,7 @@ article > header h2 {
 }
 
 .entry-link {
-    margin-top: 0.55rem;
+    margin-right: 1rem;
     display: inline-block;
 }
 
@@ -218,7 +217,7 @@ a {
 
 a:hover {
     color: var(--color-link-hover);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* === Headings === */
@@ -269,7 +268,9 @@ footer a:hover {
     }
 
     .profile-sidebar {
-        display: none;
+        display: flex;
+        align-items: center;
+        width: 100%;
     }
 
     .entry-card {
@@ -277,6 +278,7 @@ footer a:hover {
     }
 
     .entry-image {
-        max-width: 320px;
+        max-height: 200px;
+        width: auto;
     }
 }
