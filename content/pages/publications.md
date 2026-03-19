@@ -1,5 +1,7 @@
 Title: Publications
 
+## Publications
+
 <div class="entry-grid">
 	<section class="entry-card">
 		<img class="entry-image" src="./theme/publications/hl_visualization.png" alt="Histogram Loss Visualization" />
@@ -15,7 +17,7 @@ Title: Publications
 		<img class="entry-image" src="./theme/publications/bikevibes_logo.png" alt="BikeVibes App Logo" />
 		<div>
 			<h3>BikeVibes: An App for Crowdsourcing Open Road Quality Data from a Cyclist Perspective</h3>
-			<p class="entry-meta"><b>K. Luedemann</b>, M. Nascimento</p>
+			<p class="entry-meta"><b>K. Luedemann</b> and M. Nascimento</p>
 			<p class="entry-meta">International Workshop on Computational Transportation Science (IWCTS), 2022</p>
 			<p>I developed and deployed an Android app and web server to crowdsource road quality data while cycling. It uses smartphone accelerometer and GPS sensors to measure vibrations and sends the anonymized data to a web server for visualization on a map. <b>Note:</b> The app and visualization website are no longer maintained and have since been taken offline.</p>
 			<a class="entry-link" href="https://dl.acm.org/doi/10.1145/3557991.3567779">Paper</a>
@@ -26,7 +28,7 @@ Title: Publications
 	</section>
 </div>
 
-<header><h2>Poster Presentations</h2></header>
+## Poster Presentations
 
 <div class="entry-grid">
 	<section class="entry-card">
