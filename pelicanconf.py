@@ -42,8 +42,9 @@ TEMPLATE_PAGES = {}
 # Configure menu
 DISPLAY_PAGES_ON_MENU = False
 MENUITEMS = (
-    ('Projects', '/projects.html'),
+    ('CV', '/cv.html'),
     ('Publications', '/publications.html'),
+    ('Projects', '/projects.html'),
     # ('Blog', '/blog.html'),
 )
 
